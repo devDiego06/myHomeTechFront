@@ -62,7 +62,7 @@
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-8">
         <router-link
-          to="/home2"
+          to="/"
           class="flex items-center space-x-1 text-tech-gray hover:text-tech-blue transition-colors"
         >
           <HomeIcon />
@@ -76,7 +76,7 @@
           <span>Buscar Técnicos</span>
         </router-link>
         <router-link
-          to="/contact"
+          to="contact"
           class="flex items-center space-x-1 text-tech-gray hover:text-tech-blue transition-colors"
         >
           <ContactIcon />

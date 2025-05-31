@@ -1,14 +1,27 @@
 <template>
-  <!-- Nabvar -->
-  <TopMenu />
-
   <RouterView />
-  <!-- Footer -->
-  <FooterVue />
+
+  <!-- Hero Section -->
+  <HeroSection />
+
+  <!-- Cards -->
+  <HowFunction />
+
+  <!-- ServicesCards -->
+  <ServicesCards />
+
+  <!-- TestimonialsCards -->
+  <TestimonialVue />
+
+  <!-- Ready for search -->
+  <ReadyForSearchVue />
 </template>
 
 <script setup lang="ts">
-import TopMenu from '@/home/components/TopMenu.vue';
-
-import FooterVue from '../components/FooterVue.vue';
+import HeroSection from '../components/HeroSection.vue';
+import HowFunction from '../components/HowFunction.vue';
+import ServicesCards from '../components/ServicesCards.vue';
+import TestimonialVue from '../components/TestimonialVue.vue';
+import ReadyForSearchVue from '../components/ReadyForSearchVue.vue';
+import { RouterView } from 'vue-router';
 </script>

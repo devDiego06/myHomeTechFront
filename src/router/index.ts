@@ -9,13 +9,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeLayout,
+      name: 'landing',
+      component: HomeView,
       children: [
         {
-          path: 'home2',
-          name: 'hom2',
-          component: HomeView,
+          path: '', // Ruta predeterminada para la raíz
+          name: 'home',
+          component: HomeLayout,
         },
         {
           path: 'contact',

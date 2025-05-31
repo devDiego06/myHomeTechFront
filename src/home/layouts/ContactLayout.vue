@@ -143,7 +143,7 @@
                   <button
                     type="submit"
                     :disabled="loading"
-                    class="w-full bg-tech-blue hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors disabled:opacity-50"
+                    class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors disabled:opacity-50"
                   >
                     {{ loading ? 'Enviando...' : 'Enviar Solicitud' }}
                   </button>
@@ -173,7 +173,7 @@
                 <div class="space-y-4">
                   <div class="flex items-start">
                     <div class="bg-blue-100 p-2 rounded-full mr-4">
-                      <PhoneIcon class="h-5 w-5 text-tech-blue" />
+                      <PhoneIcon class="h-5 w-5" />
                     </div>
                     <div>
                       <h3 class="font-medium">Teléfono</h3>
@@ -195,7 +195,7 @@
 
                   <div class="flex items-start">
                     <div class="bg-blue-100 p-2 rounded-full mr-4">
-                      <MapPinIcon class="h-5 w-5 text-tech-blue" />
+                      <LocalitationIcon class="h-5 w-5 text-tech-blue" />
                     </div>
                     <div>
                       <h3 class="font-medium">Oficina Principal</h3>
@@ -215,7 +215,7 @@
                   lo antes posible.
                 </p>
                 <button
-                  class="w-full bg-tech-blue hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors"
+                  class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors"
                 >
                   <PhoneIcon class="mr-2 h-4 w-4 inline" /> Llamar Ahora
                 </button>
@@ -229,7 +229,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import LocalitationIcon from '@/assets/icons/LocalitationIcon.vue';
+import MailIcon from '@/assets/icons/MailIcon.vue';
+import PhoneIcon from '@/assets/icons/PhoneIcon.vue';
+import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 // Datos de ejemplo
