@@ -62,21 +62,21 @@
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-8">
         <router-link
-          to="/"
+          to="/home2"
           class="flex items-center space-x-1 text-tech-gray hover:text-tech-blue transition-colors"
         >
           <HomeIcon />
           <span>Inicio</span>
         </router-link>
         <router-link
-          to="/busqueda"
+          to="/"
           class="flex items-center space-x-1 text-tech-gray hover:text-tech-blue transition-colors"
         >
           <SearchIcon />
           <span>Buscar Técnicos</span>
         </router-link>
         <router-link
-          to="/contacto"
+          to="/contact"
           class="flex items-center space-x-1 text-tech-gray hover:text-tech-blue transition-colors"
         >
           <ContactIcon />
