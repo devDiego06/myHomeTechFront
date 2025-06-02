@@ -1,5 +1,8 @@
+import ContactForm from '@/home/components/ContactForm.vue';
+import PerfilTechnician from '@/home/components/PerfilTechnician.vue';
 import ContactLayout from '@/home/layouts/ContactLayout.vue';
 import HomeLayout from '@/home/layouts/HomeLayout.vue';
+import SearchLayout from '@/home/layouts/SearchLayout.vue';
 import HomeView from '@/home/view/HomeView.vue';
 
 import { createRouter, createWebHistory } from 'vue-router';
@@ -21,6 +24,23 @@ const router = createRouter({
           path: 'contact',
           name: 'contact',
           component: ContactLayout,
+        },
+        {
+          path: 'search',
+          name: 'search',
+          component: SearchLayout,
+
+        },
+        {
+          path: '/:technicianId',
+          name: 'search-technician',
+          component: PerfilTechnician,
+
+        },
+        {
+          path: 'contact-form/:technicianId',
+          name: 'contact-form',
+          component: ContactForm,
         },
       ],
     },

@@ -1,6 +1,6 @@
 <template>
   <!-- Testimonios -->
-  <section class="section bg-gray-50 p-20">
+  <section class="section bg-white p-20">
     <div class="container-custom">
       <div class="text-center mb-12">
         <h2 class="mb-4 text-3xl font-bold">Lo que dicen nuestros clientes</h2>
@@ -21,6 +21,15 @@
           :service="testimonial.service"
         />
       </div>
+      <div class="text-center mt-12">
+        <router-link
+          class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300 flex items-center justify-center w-fit mx-auto"
+          to="#find-technician"
+        >
+          Encuentra tu técnico ideal
+          <span class="material-icons ml-2">arrow_forward</span>
+        </router-link>
+      </div>
     </div>
   </section>
 </template>
@@ -28,6 +37,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import TestimonialCard from './TestimonialCard.vue';
+import { RouterLink } from 'vue-router';
 
 // Testimonios
 const testimonials = ref([

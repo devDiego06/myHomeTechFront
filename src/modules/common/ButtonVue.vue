@@ -2,11 +2,11 @@
   <button
     class="animated-button"
     :style="{
-      backgroundColor: props.backgroundColor || '#ffffff',
-      color: props.textColor || '#02284d',
-      boxShadow: `0 0 0 2px ${props.borderColor || '#02284d'}`,
-      borderColor: props.borderColor || 'transparent',
-      fill: props.iconColor || '#02284d',
+      backgroundColor: '#ffffff',
+      color: '#02284d',
+      boxShadow: `0 0 0 2px #02284d`,
+      borderColor: 'transparent',
+      fill: '#02284d',
     }"
   >
     <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
@@ -27,10 +27,8 @@
 <script lang="ts" setup>
 interface ButtonTitle {
   text: string;
-  backgroundColor: string;
-  textColor: string;
   borderColor: string;
-  iconColor: string;
+
 }
 
 const props = defineProps<ButtonTitle>();
@@ -116,7 +114,7 @@ const props = defineProps<ButtonTitle>();
 
 .animated-button:active {
   scale: 0.95;
-  box-shadow: 0 0 0 4px #white;
+  box-shadow: 0 0 0 4px white;
 }
 
 .animated-button:hover .circle {

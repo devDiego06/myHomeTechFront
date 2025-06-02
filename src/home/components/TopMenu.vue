@@ -1,15 +1,12 @@
 <template>
-  <header class="sticky top-0 w-full bg-white shadow-sm z-50">
-    <div class="container-custom flex items-center justify-between px-3">
-      <router-link to="/" class="flex items-center space-x-2">
-        <div class="w-20 h-20 flex items-center justify-center">
-          <span class="sr-only">Logo</span>
-
-          <!-- Logo -->
-
-          <!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-          <svg
-            class="mt-3"
+<header class="bg-white shadow-md px-4 fixed w-full z-50">
+  <div class="mx-auto py-4 flex flex-auto justify-between items-center">
+    <div class="flex items-center">
+      <div class="flex items-center">
+        <span class="sr-only">Logo</span>
+        <!-- Logo -->
+        <svg
+            class=" h-16 w-16"
             version="1.1"
             id="Capa_1"
             xmlns="http://www.w3.org/2000/svg"
@@ -54,56 +51,27 @@
 	c0,12.9-8.4,21.4-21.1,21.4c-25.8,0.1-51.7,0.1-77.5,0c-1.5,0-2.9-0.1-4.4-0.2C294.8,298.2,294.5,297.7,294.1,297.2z"
             />
           </svg>
-          <!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-        </div>
-        <span class="text-xl font-bold text-tech-gray">MyHomeTech</span>
-      </router-link>
-
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-8">
-        <router-link
-          to="/"
-          class="flex items-center space-x-1 text-tech-gray hover:text-tech-blue transition-colors"
-        >
-          <HomeIcon />
-          <span>Inicio</span>
-        </router-link>
-        <router-link
-          to="/"
-          class="flex items-center space-x-1 text-tech-gray hover:text-tech-blue transition-colors"
-        >
-          <SearchIcon />
-          <span>Buscar Técnicos</span>
-        </router-link>
-        <router-link
-          to="contact"
-          class="flex items-center space-x-1 text-tech-gray hover:text-tech-blue transition-colors"
-        >
-          <ContactIcon />
-          <span>Contacto</span>
-        </router-link>
-      </nav>
-
-      <div class="hidden md:flex items-center space-x-4">
-        <button
-          class="border border-gray-300 text-tech-gray hover:bg-gray-100 font-medium py-2 px-4 rounded transition-colors"
-        >
-          Ingresar
-        </button>
-        <button
-          class="bg-blue-600 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded transition-colors"
-        >
-          Registrarse
-        </button>
       </div>
+      <RouterLink class="text-2xl font-bold text-black" to="/">MyHomeTech</RouterLink>
     </div>
-  </header>
+
+    <nav class="space-x-6">
+      <router-link class="text-gray-600 hover:text-indigo-600 transition duration-300" to="/">Inicio</router-link>
+      <router-link class="text-gray-600 hover:text-indigo-600 transition duration-300" to="search">Buscar Técnicos</router-link>
+      <router-link class="text-gray-600 hover:text-indigo-600 transition duration-300" to="contact">Contacto</router-link>
+    </nav>
+    <div>
+      <router-link class="text-gray-600 hover:text-indigo-600 mr-4" to="login">Iniciar Sesión</router-link>
+      <a class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" href="#register">Registrarse</a>
+    </div>
+  </div>
+</header>
 </template>
 
+
 <script setup lang="ts">
-import ContactIcon from '@/assets/icons/ContactIcon.vue';
-import HomeIcon from '@/assets/icons/HomeIcon.vue';
-import SearchIcon from '@/assets/icons/SearchIcon.vue';
+
+import { RouterLink } from 'vue-router';
 </script>
 
 <style type="text/css">

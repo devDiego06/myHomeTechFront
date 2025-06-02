@@ -1,68 +1,62 @@
 <template>
   <!-- Como Funciona -->
-  <section class="section bg-gray-50 p-30">
-    <div class="container-custom">
-      <div class="text-center">
-        <h2 class="pb-10 text-4xl font-bold">Cómo Funciona</h2>
-        <p class="text-gray-600 max-w-3xl mx-auto pb-10">
-          Un proceso simple y eficiente para conectarte con los técnicos adecuados para tus
-          necesidades
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto pb-10">
-        <div class="bg-white p-6 rounded-lg shadow-md text-center border border-gray-100">
+  <section class="py-16 bg-white" id="how-it-works">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Simple, Rápido y Eficaz</h2>
+      <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+        Encuentra el técnico ideal en tres sencillos pasos. Nuestro objetivo es facilitar la
+        conexión entre clientes y profesionales.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+        >
           <div
-            class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            class="bg-indigo-100 text-indigo-600 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6"
           >
-            <SearchIcon class="w-7 h-7 text-tech-blue" />
+            <span class="material-icons text-3xl">search</span>
           </div>
-          <h3 class="text-xl font-medium mb-2">Busca</h3>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">1. Busca y Filtra</h3>
           <p class="text-gray-600">
-            Dinos qué necesitas reparar o instalar y tu ubicación para encontrar técnicos
-            cualificados cerca de ti
+            Encuentra técnicos por especialidad, ubicación y disponibilidad. Lee opiniones de otros
+            clientes.
           </p>
         </div>
-
-        <div class="bg-white p-6 rounded-lg shadow-md text-center border border-gray-100">
+        <div
+          class="bg-indigo-600 text-white p-8 rounded-xl shadow-lg hover:shadow-2xl transform md:scale-105 transition-all duration-300"
+        >
           <div
-            class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            class="bg-white text-indigo-600 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6"
           >
-            <LocalitationIcon class="w-7 h-7 text-tech-blue" />
+            <span class="material-icons text-3xl">calendar_today</span>
           </div>
-          <h3 class="text-xl font-medium mb-2">Selecciona</h3>
+          <h3 class="text-xl font-semibold mb-2">2. Agenda tu Cita</h3>
+          <p>
+            Selecciona el técnico, elige la fecha y hora que te convenga, y solicita el servicio
+            directamente.
+          </p>
+          <a
+            class="mt-6 inline-block bg-white text-indigo-600 font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition duration-300"
+            href="#find-technician"
+            >Buscar Ahora</a
+          >
+        </div>
+        <div
+          class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+        >
+          <div
+            class="bg-indigo-100 text-indigo-600 rounded-full p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6"
+          >
+            <span class="material-icons text-3xl">thumb_up</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">3. Servicio y Calificación</h3>
           <p class="text-gray-600">
-            Compara perfiles, valoraciones y precios de diferentes técnicos para elegir el que mejor
-            se adapte a tus necesidades
+            Recibe el servicio y califica tu experiencia para ayudar a otros usuarios.
           </p>
         </div>
-
-        <div class="bg-white p-6 rounded-lg shadow-md text-center border border-gray-100">
-          <div
-            class="w-14 h-14 bg-blue-100 rounded-full flex items-center p-1 justify-center mx-auto mb-4"
-          >
-            <DateIcon class="w-7 h-7" />
-          </div>
-          <h3 class="text-xl font-medium mb-2">Programa</h3>
-          <p class="text-gray-600">
-            Agenda una visita en el horario que te convenga y recibe la asistencia técnica que
-            necesitas sin complicaciones
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-10 text-center flex items-center justify-center">
-        <router-link to="/busqueda">
-          <ButtonVue :text="'Buscar Tecnicos ahora'" />
-        </router-link>
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
-import DateIcon from '@/assets/icons/DateIcon.vue';
-import LocalitationIcon from '@/assets/icons/LocalitationIcon.vue';
-import SearchIcon from '@/assets/icons/SearchIcon.vue';
-import ButtonVue from '@/modules/common/ButtonVue.vue';
-</script>
+<script setup lang="ts"></script>
