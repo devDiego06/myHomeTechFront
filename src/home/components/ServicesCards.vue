@@ -102,7 +102,7 @@
 //   {
 //     title: 'Refrigeración',
 //     icon: 'refrigerator',
-//     description: 'Mantenimiento y reparación de refrigeradores y congeladores de todas las marcas.',
+//     description: 'Mantenimiento y reparación de refrigeradores y         congeladores de todas las marcas.',
 //     features: [
 //       'Diagnóstico completo del sistema',
 //       'Reparación de fugas de gas',

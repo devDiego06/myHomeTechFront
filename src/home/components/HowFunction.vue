@@ -35,10 +35,10 @@
             Selecciona el técnico, elige la fecha y hora que te convenga, y solicita el servicio
             directamente.
           </p>
-          <a
-            class="mt-6 inline-block bg-white text-indigo-600 font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition duration-300"
-            href="#find-technician"
-            >Buscar Ahora</a
+          <router-link
+            class="mt-6 inline-block bg-white text-indigo-600 font-semibold py-2 px-6 rounded-lg hover:bg-gray-300 transition duration-300"
+            to="search"
+            >Buscar Ahora</router-link
           >
         </div>
         <div
