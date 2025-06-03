@@ -60,7 +60,7 @@
                     <span>{{ technician.location }}</span>
                   </div>
                 </div>
-                <router-link :to="`/contacto?tech=${technician.id}`" class="mt-4 md:mt-0">
+                <router-link :to="`/contact?tech=${technician.id}&type=email`" class="mt-4 md:mt-0">
                   <button
                     class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors w-full md:w-auto"
                   >
@@ -199,7 +199,7 @@
                 </div>
               </div>
               <div class="mt-6">
-                <router-link :to="`/contact?technicianId=${technician.id}`">
+                <router-link :to="`/contact?tech=${technician.id}&type=email`">
                   <button
                     class="w-full md:w-auto bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors"
                   >

@@ -1,31 +1,31 @@
 <template>
   <!-- component -->
-  <section class="pt-20 hero-bg  text-black min-h-screen flex items-center" id="hero">
+  <section class="pt-20 hero-bg bg-[#443850]  text-white min-h-screen flex items-center" id="hero">
     <div
       class="container mx-auto px-6 py-16 text-center md:text-left flex justify-between items-center"
     >
       <div class="md:w-1/2">
-        <span class="text-black font-semibold uppercase tracking-wider"
+        <span class="text-[#6fd2cf] font-semibold uppercase tracking-wider"
           >SOLUCIONES RÁPIDAS Y CONFIABLES</span
         >
-        <h1 class="text-5xl text-black md:text-6xl font-bold mt-4 mb-6">
+        <h1 class="text-5xl text-white md:text-6xl font-bold mt-4 mb-6">
           Encuentra Técnicos Expertos <br class="hidden md:block" />
           para tus Electrodomésticos
         </h1>
-        <p class="text-lg text-black mb-8">
+        <p class="text-lg text-white mb-8">
           Conecta con profesionales calificados cerca de ti. Agenda servicios de reparación y
           mantenimiento de forma fácil y segura.
         </p>
         <div class="flex justify-center md:justify-start space-x-4">
           <router-link
-            class="bg-black text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300 flex items-center"
+            class="bg-[#6fd2cf] text-[#443850] font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-[#443850] hover:text-[#6fd2cf] transition duration-300 flex items-center"
             to="search"
           >
             Buscar un Técnico
             <span class="material-icons ml-2">search</span>
           </router-link>
           <router-link
-            class="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300 flex items-center"
+            class="border-2 border-[#6fd2cf] text-[#6fd2cf] font-semibold py-3 px-8 rounded-lg hover:bg-[#6fd2cf] hover:text-[#443850] transition duration-300 flex items-center"
             to="auth/register"
           >
             Soy Técnico

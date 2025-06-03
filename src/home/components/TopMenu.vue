@@ -1,5 +1,5 @@
 <template>
-<header class="bg-white shadow-md px-4 fixed w-full z-50">
+<header class="bg-[#F1E7E7] shadow-md px-4 fixed w-full z-50">
   <div class="mx-auto py-4 flex flex-auto justify-between items-center">
     <div class="flex items-center">
       <div class="flex items-center">
@@ -52,17 +52,17 @@
             />
           </svg>
       </div>
-      <RouterLink class="text-2xl font-bold text-black" to="/">MyHomeTech</RouterLink>
+      <RouterLink class="text-2xl font-bold text-[#443850]" to="/">MyHomeTech</RouterLink>
     </div>
 
     <nav class="space-x-6">
-      <router-link class="text-gray-600 hover:text-indigo-600 transition duration-300" to="/">Inicio</router-link>
-      <router-link class="text-gray-600 hover:text-indigo-600 transition duration-300" to="search">Buscar Técnicos</router-link>
-      <router-link class="text-gray-600 hover:text-indigo-600 transition duration-300" to="contact">Contacto</router-link>
+      <router-link class="text-[#443850] hover:text-[#6fd2cf] transition duration-300" to="/">Inicio</router-link>
+      <router-link class="text-[#443850] hover:text-[#6fd2cf] transition duration-300" to="search">Buscar Técnicos</router-link>
+      <router-link class="text-[#443850] hover:text-[#6fd2cf] transition duration-300" to="contact">Contacto</router-link>
     </nav>
     <div>
-      <router-link class="text-gray-600 hover:text-indigo-600 mr-4" to="login">Iniciar Sesión</router-link>
-      <a class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" href="#register">Registrarse</a>
+      <router-link class="text-[#443850] hover:text-[#6fd2cf] mr-4" to="auth/login">Iniciar Sesión</router-link>
+      <router-link class="bg-[#6fd2cf] hover:bg-[#443850] hover:text-[#6fd2cf] text-[#443850] font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" to="/auth/register">Registrarse</router-link>
     </div>
   </div>
 </header>

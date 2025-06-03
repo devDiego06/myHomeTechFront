@@ -3,7 +3,7 @@
 <div class="container mx-auto px-6">
 <div class="grid md:grid-cols-4 gap-8 mb-8">
 <div>
-<h4 class="text-xl font-semibold text-white mb-4">TecniApp</h4>
+<h4 class="text-xl font-semibold text-white mb-4">MyHomeTech</h4>
 <p class="text-sm">Conectando clientes con los mejores técnicos de electrodomésticos.</p>
 <div class="flex space-x-4 mt-4">
 <router-link class="text-gray-400 hover:text-white transition duration-300" to="#"><img alt="Facebook icon" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIub37b5ELiFEhWkKatznv-h1aFUT7unojXDpP0npoU1k71YRH8EmwVmn7EqX5rS5WXwsakuepvoif-t2tJ75rdU-UISCCLyndyhwIn515xWvYCECaqwvTAf-eJGIhTpmh624Ey9QXeGBmXd5-skj1l9cvJ7DFrMv4YGtzphID2yZtKTeJ7WPILsi0OzSLW7Z7Ne949G3qFlNcGhQEBaQvT0hW2Nh6hapMQYvZl70HRAuebuj5YBfSc-wF89JIF_uq7vgdV-uvgTA"/></router-link>
@@ -27,7 +27,7 @@
 <li><router-link class="hover:text-indigo-400 transition duration-300" to="#">Preguntas Frecuentes</router-link></li>
 <li><router-link class="hover:text-indigo-400 transition duration-300" to="#">Términos y Condiciones</router-link></li>
 <li><router-link class="hover:text-indigo-400 transition duration-300" to="#">Política de Privacidad</router-link></li>
-<li><router-link class="hover:text-indigo-400 transition duration-300" to="#">Contacto Soporte</router-link></li>
+<li><router-link class="hover:text-indigo-400 transition duration-300" to="contact">Contacto Soporte</router-link></li>
 </ul>
 </div>
 <div>
@@ -55,7 +55,7 @@
 
 
 <script setup lang="ts">
-import FacebookIcon from '@/assets/icons/FacebookIcon.vue';
+
 import { RouterLink } from 'vue-router';
 
 
