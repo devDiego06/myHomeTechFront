@@ -4,9 +4,9 @@
   <form @submit.prevent="onLogin">
     <!-- Username Input -->
     <div class="mb-4">
-      <label for="username" class="block text-gray-600">Email</label>
+      <label for="email" class="block text-gray-600">Email</label>
       <input
-        v-model="myForm.username"
+        v-model="myForm.email"
         ref="emailInputRef"
         type="text"
         id="email"
@@ -59,13 +59,14 @@
 
 <script lang="ts" setup>
 import { reactive, watchEffect } from 'vue';
-import { useAuthStore } from '../store/auth.store';
+
 import { ref } from 'vue';
-import { useToast } from 'vue-toastification';
+import { useToast } from 'vue-toast-notification';
+import { useAuthStore } from '../store/authStore';
 
 //Is utilized reactive becase is better yo use for save arrays or objetcs. For this reason we use reactive and not ref
 const myForm = reactive({
-  username: '',
+  email: '',
   password: '',
   rememberMe: false,
 });
@@ -79,7 +80,7 @@ const toast = useToast();
 
 const onLogin = async () => {
   //we validate that the user has filled the inputs
-  if (myForm.username === '') {
+  if (myForm.email === '') {
     return emailInputRef.value?.focus();
   }
 
@@ -89,12 +90,12 @@ const onLogin = async () => {
 
   //If the user dont wanna remember the email, we remove it from localStorage
   if (myForm.rememberMe) {
-    localStorage.setItem('email', myForm.username);
+    localStorage.setItem('email', myForm.email);
   } else {
     localStorage.removeItem('email');
   }
 
-  const ok = await authStore.login(myForm.username, myForm.password);
+  const ok = await authStore.login(myForm.email, myForm.password);
   if (ok) return;
 
   toast.error('Usuario/Contraseña incorrectos');
@@ -103,7 +104,7 @@ const onLogin = async () => {
 watchEffect(() => {
   const email = localStorage.getItem('email');
   if (email) {
-    myForm.username = email;
+    myForm.email = email;
     myForm.rememberMe = true;
   }
 });

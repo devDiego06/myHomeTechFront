@@ -6,13 +6,29 @@
       <label for="name" class="block text-gray-600">Name</label>
       <input
         ref="nameInputRef"
-        v-model="myForm.fullName"
+        v-model="myForm.name"
         type="text"
         id="name"
         name="name"
         class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
         autocomplete="off"
       />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700" for="service">
+        Tipo de servicio
+      </label>
+      <select
+        id="rol"
+        v-model="myForm.rol"
+        required
+        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+      >
+        <option value="">Selecciona un rol</option>
+        <option value="client">Cliente</option>
+        <option value="technician">Tecnico</option>
+      </select>
     </div>
 
     <!-- Username Input -->
@@ -61,13 +77,14 @@
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue';
-import { useAuthStore } from '../store/auth.store';
-import { useToast } from 'vue-toastification';
+import { useAuthStore } from '../store/authStore';
+import { useToast } from 'vue-toast-notification';
 
 const myForm = reactive({
+  name: '',
   email: '',
   password: '',
-  fullName: '',
+  rol: '',
 });
 
 const emailInputRef = ref<HTMLInputElement | null>(null);
@@ -78,7 +95,9 @@ const authStore = useAuthStore();
 const toast = useToast();
 
 const onRegister = async () => {
-  if ((myForm.fullName.length < 2) ||  (myForm.fullName.length > 20) || (myForm.fullName === '')) {
+  console.log('Datos', myForm);
+
+  if (myForm.name.length < 2 || myForm.name.length > 20 || myForm.name === '') {
     nameInputRef.value?.focus();
   }
 
@@ -91,9 +110,10 @@ const onRegister = async () => {
     return passwordInputRef.value?.focus();
   }
 
-  const ok = await authStore.register(myForm.fullName, myForm.email, myForm.password);
+  const ok = await authStore.register(myForm.name, myForm.email, myForm.password, myForm.rol);
 
   if (ok) return;
+  console.log(ok);
 
   toast.error('No se pudo crear el usuario');
 };

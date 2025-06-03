@@ -4,6 +4,7 @@ import ContactLayout from '@/home/layouts/ContactLayout.vue';
 import HomeLayout from '@/home/layouts/HomeLayout.vue';
 import SearchLayout from '@/home/layouts/SearchLayout.vue';
 import HomeView from '@/home/view/HomeView.vue';
+import { authRoutes } from '@/modules/auth/routes';
 
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -29,13 +30,11 @@ const router = createRouter({
           path: 'search',
           name: 'search',
           component: SearchLayout,
-
         },
         {
           path: '/:technicianId',
           name: 'search-technician',
           component: PerfilTechnician,
-
         },
         {
           path: 'contact-form/:technicianId',
@@ -44,6 +43,7 @@ const router = createRouter({
         },
       ],
     },
+    authRoutes,
   ],
 });
 
