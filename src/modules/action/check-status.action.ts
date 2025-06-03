@@ -7,7 +7,7 @@ interface CheckError {
 
 interface CheckSuccess {
   ok: true;
-  token: string;
+  access_token: string;
 }
 
 export const checkStatusAction = async (): Promise<CheckError | CheckSuccess> => {
@@ -21,7 +21,7 @@ export const checkStatusAction = async (): Promise<CheckError | CheckSuccess> =>
 
     return {
       ok: true,
-      token: data.token,
+      access_token: data.token,
     };
   } catch (error) {
     if (isAxiosError(error) && error.response?.status === 401) {

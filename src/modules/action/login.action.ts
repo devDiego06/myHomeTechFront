@@ -9,7 +9,7 @@ interface LoginError {
 
 interface LoginSuccess {
   ok: true;
-  token: string;
+  access_token: string;
 }
 
 export const loginAction = async (
@@ -23,7 +23,7 @@ export const loginAction = async (
 
     return {
       ok: true,
-      token: data.token,
+      access_token: data.access_token,
     };
   } catch (error) {
     if (isAxiosError(error) && error.response?.status === 401) {

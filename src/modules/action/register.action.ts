@@ -28,7 +28,7 @@ export const registerAction = async (
 
     return {
       ok: true,
-      token: data.token,
+      token: data.access_token,
     };
   } catch (error) {
     if (isAxiosError(error) && error.response?.status === 400) {

@@ -13,14 +13,15 @@ export const useAuthStore = defineStore('auth', () => {
   const login = async (email: string, password: string) => {
     try {
       const loginResp = await loginAction(email, password);
+
       if (!loginResp.ok) {
         logOut();
         return false;
       }
-      console.log(loginResp.token);
+      console.log(loginResp.access_token);
 
       authStatus.value = AuthStatus.Authenticated;
-      token.value = loginResp.token;
+      token.value = loginResp.access_token;
 
       return true;
     } catch (error) {
@@ -52,7 +53,7 @@ export const useAuthStore = defineStore('auth', () => {
       }
 
       authStatus.value = AuthStatus.Authenticated;
-      token.value = statusResp.token;
+      token.value = statusResp.access_token;
 
       return true;
     } catch (error) {
