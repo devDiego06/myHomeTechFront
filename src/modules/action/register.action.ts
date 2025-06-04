@@ -1,5 +1,5 @@
 import { techApi } from '@/api/HomeTechApi';
-import type { AuthResponse } from '../auth/interfaces';
+import type { AuthResponse, User } from '../auth/interfaces';
 import { isAxiosError } from 'axios';
 
 interface RegisterError {
@@ -9,7 +9,8 @@ interface RegisterError {
 
 interface RegisterSuccess {
   ok: true;
-  token: string;
+  access_token: string;
+  user: User;
 }
 
 export const registerAction = async (
@@ -28,7 +29,8 @@ export const registerAction = async (
 
     return {
       ok: true,
-      token: data.access_token,
+      access_token: data.access_token,
+      user: data.user,
     };
   } catch (error) {
     if (isAxiosError(error) && error.response?.status === 400) {

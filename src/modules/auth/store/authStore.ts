@@ -5,8 +5,10 @@ import { computed, ref } from 'vue';
 import { loginAction } from '@/modules/action/login.action';
 import { checkStatusAction } from '@/modules/action/check-status.action';
 import { registerAction } from '@/modules/action/register.action';
+import type { User } from '../interfaces/user.interface';
 
 export const useAuthStore = defineStore('auth', () => {
+  const user = ref<User | undefined>();
   const token = ref(useLocalStorage('token', '')); //recibe 2 parametros , key y valor por defecto
   const authStatus = ref(AuthStatus.Checking);
 
@@ -22,6 +24,9 @@ export const useAuthStore = defineStore('auth', () => {
 
       authStatus.value = AuthStatus.Authenticated;
       token.value = loginResp.access_token;
+      user.value = loginResp.user;
+
+      console.log(loginResp.user);
 
       return true;
     } catch (error) {
@@ -38,6 +43,12 @@ export const useAuthStore = defineStore('auth', () => {
         logOut();
         return false;
       }
+
+      authStatus.value = AuthStatus.Authenticated;
+      token.value = registerResp.access_token;
+      user.value = registerResp.user;
+
+      return true;
     } catch (error) {
       console.log(error);
       logOut();
@@ -75,6 +86,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   return {
     //VARIABLES
+    user,
     token,
     authStatus,
 

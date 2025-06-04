@@ -1,5 +1,6 @@
 import { techApi } from '@/api/HomeTechApi';
 import { isAxiosError } from 'axios';
+import type { User } from '../auth/interfaces';
 
 interface CheckError {
   ok: false;
@@ -8,6 +9,7 @@ interface CheckError {
 interface CheckSuccess {
   ok: true;
   access_token: string;
+  user: User;
 }
 
 export const checkStatusAction = async (): Promise<CheckError | CheckSuccess> => {
@@ -21,7 +23,8 @@ export const checkStatusAction = async (): Promise<CheckError | CheckSuccess> =>
 
     return {
       ok: true,
-      access_token: data.token,
+      access_token: data.access_token,
+      user: data.user,
     };
   } catch (error) {
     if (isAxiosError(error) && error.response?.status === 401) {

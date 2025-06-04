@@ -1,5 +1,5 @@
 import { techApi } from '@/api/HomeTechApi';
-import type { AuthResponse } from '../auth/interfaces';
+import type { AuthResponse, User } from '../auth/interfaces';
 import { isAxiosError } from 'axios';
 
 interface LoginError {
@@ -10,6 +10,7 @@ interface LoginError {
 interface LoginSuccess {
   ok: true;
   access_token: string;
+  user: User;
 }
 
 export const loginAction = async (
@@ -24,6 +25,7 @@ export const loginAction = async (
     return {
       ok: true,
       access_token: data.access_token,
+      user: data.user,
     };
   } catch (error) {
     if (isAxiosError(error) && error.response?.status === 401) {
