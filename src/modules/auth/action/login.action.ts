@@ -1,5 +1,5 @@
 import { techApi } from '@/api/HomeTechApi';
-import type { AuthResponse, User } from '../auth/interfaces';
+import type { AuthResponse, User } from '../interfaces';
 import { isAxiosError } from 'axios';
 
 interface LoginError {

@@ -1,6 +1,6 @@
 import { techApi } from '@/api/HomeTechApi';
 import { isAxiosError } from 'axios';
-import type { User } from '../auth/interfaces';
+import type { User } from '../interfaces';
 
 interface CheckError {
   ok: false;

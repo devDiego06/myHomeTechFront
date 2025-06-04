@@ -2,9 +2,9 @@ import { useLocalStorage } from '@vueuse/core';
 import { defineStore } from 'pinia';
 import { AuthStatus } from '../interfaces/authStatus.enum';
 import { computed, ref } from 'vue';
-import { loginAction } from '@/modules/action/login.action';
-import { checkStatusAction } from '@/modules/action/check-status.action';
-import { registerAction } from '@/modules/action/register.action';
+import { loginAction } from '@/modules/auth/action/login.action';
+import { checkStatusAction } from '@/modules/auth/action/check-status.action';
+import { registerAction } from '@/modules/auth/action/register.action';
 import type { User } from '../interfaces/user.interface';
 
 export const useAuthStore = defineStore('auth', () => {
