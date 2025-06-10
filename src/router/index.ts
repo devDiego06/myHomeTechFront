@@ -1,5 +1,7 @@
 import ContactForm from '@/home/components/ContactForm.vue';
 import PerfilTechnician from '@/home/components/PerfilTechnician.vue';
+import isAuthenticatedGuard from '@/home/guards/isAuthenticated.guard';
+import isLoginGuard from '@/home/guards/isLogin.guard';
 import ContactLayout from '@/home/layouts/ContactLayout.vue';
 import HomeLayout from '@/home/layouts/HomeLayout.vue';
 import SearchLayout from '@/home/layouts/SearchLayout.vue';
@@ -29,6 +31,7 @@ const router = createRouter({
         {
           path: 'search',
           name: 'search',
+          beforeEnter: isAuthenticatedGuard,
           component: SearchLayout,
         },
         {

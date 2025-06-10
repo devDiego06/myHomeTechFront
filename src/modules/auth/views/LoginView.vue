@@ -63,6 +63,10 @@ import { reactive, watchEffect } from 'vue';
 import { ref } from 'vue';
 import { useToast } from 'vue-toast-notification';
 import { useAuthStore } from '../store/authStore';
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute();
+const router = useRouter();
 
 //Is utilized reactive becase is better yo use for save arrays or objetcs. For this reason we use reactive and not ref
 const myForm = reactive({
@@ -96,7 +100,10 @@ const onLogin = async () => {
   }
 
   const ok = await authStore.login(myForm.email, myForm.password);
-  if (ok) return;
+  if (ok) {
+    const redirectPath = route.query.redirect || '/';
+    router.push(redirectPath as string);
+  };
 
   toast.error('Usuario/Contraseña incorrectos');
 };

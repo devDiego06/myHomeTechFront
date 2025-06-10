@@ -61,8 +61,24 @@
       <router-link class="text-[#443850] hover:text-[#6fd2cf] transition duration-300" to="contact">Contacto</router-link>
     </nav>
     <div>
-      <router-link class="text-[#443850] hover:text-[#6fd2cf] mr-4" to="auth/login">Iniciar Sesión</router-link>
-      <router-link class="bg-[#6fd2cf] hover:bg-[#443850] hover:text-[#6fd2cf] text-[#443850] font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" to="/auth/register">Registrarse</router-link>
+      <template v-if="!authStore.isAuthenticated">
+        <router-link class="text-[#443850] hover:text-[#6fd2cf] mr-4" to="auth/login">Iniciar Sesión</router-link>
+
+        <router-link class="bg-[#6fd2cf] hover:bg-[#443850] hover:text-[#6fd2cf] text-[#443850] font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300" to="/auth/register">Registrarse</router-link>
+      </template>
+
+      <template v-else>
+        <button type="button" @click="authStore.logOut()" class="text-[#443850] hover:text-[#6fd2cf] mr-4">Cerrar Seccion</button>
+
+      <button
+            @click="authStore.logOut()"
+            type="button"
+            class="rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg"
+          >
+            LogOut
+          </button>
+      </template>
+
     </div>
   </div>
 </header>
@@ -71,17 +87,14 @@
 
 <script setup lang="ts">
 
+import { useAuthStore } from '@/modules/auth/store/authStore';
+
 import { RouterLink } from 'vue-router';
+
+const authStore = useAuthStore();
+
+
+
+
 </script>
 
-<style type="text/css">
-.st0 {
-  fill: #02284d;
-}
-.st1 {
-  fill: #ff7602;
-}
-.st2 {
-  fill: none;
-}
-</style>

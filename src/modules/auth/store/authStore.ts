@@ -65,6 +65,8 @@ export const useAuthStore = defineStore('auth', () => {
 
       authStatus.value = AuthStatus.Authenticated;
       token.value = statusResp.access_token;
+      user.value = statusResp.user;
+      console.log('Usuario logueado');
 
       return true;
     } catch (error) {
@@ -76,9 +78,11 @@ export const useAuthStore = defineStore('auth', () => {
   };
 
   const logOut = () => {
+    console.log('Cerrado sesion');
     localStorage.removeItem('token');
     token.value = '';
     authStatus.value = AuthStatus.UnAuthenticated;
+    user.value = undefined;
     console.log('Usuario Cerrado');
 
     return false;

@@ -1,6 +1,6 @@
 <template>
   <div class="pt-22 min-h-screen flex flex-col">
-   <RouterView />
+   <RouterView  />
 
     <!-- Hero section -->
     <div class="bg-blue-500 mt-2 text-white px-4 py-12">
@@ -73,7 +73,9 @@
 import { ref } from 'vue'
 import TechnicianCard from '../components/TechnicianCard.vue'
 import SearchFilter from '../components/SearchFilter.vue'
+import { useAuthStore } from '@/modules/auth/store/authStore'
 
+const authStore = useAuthStore();
 
 // Datos de ejemplo para los técnicos
 const technicians = [

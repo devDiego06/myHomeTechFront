@@ -28,4 +28,8 @@ import TestimonialVue from '../components/TestimonialVue.vue';
 import ReadyForSearchVue from '../components/ReadyForSearchVue.vue';
 import { RouterView } from 'vue-router';
 import AreYouTechnician from '../components/AreYouTechnician.vue';
+import { useAuthStore } from '@/modules/auth/store/authStore';
+
+
+
 </script>
