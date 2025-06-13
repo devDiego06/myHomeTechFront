@@ -20,6 +20,9 @@ export const loginAction = async (
   try {
     const { data } = await techApi.post<AuthResponse>('/auth/login', { email, password });
 
+
+
+
     console.log('token', data);
 
     return {

@@ -20,6 +20,7 @@
         Tipo de servicio
       </label>
       <select
+        ref="rolInputRef"
         id="rol"
         v-model="myForm.rol"
         required
@@ -90,6 +91,7 @@ const myForm = reactive({
 const emailInputRef = ref<HTMLInputElement | null>(null);
 const passwordInputRef = ref<HTMLInputElement | null>(null);
 const nameInputRef = ref<HTMLInputElement | null>(null);
+const rolInputRef = ref<HTMLSelectElement | null>(null);
 
 const authStore = useAuthStore();
 const toast = useToast();

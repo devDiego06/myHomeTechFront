@@ -41,7 +41,7 @@
 
     <div class="mt-4 flex flex-col sm:flex-row gap-2">
       <router-link
-        :to="`/technicianId=${id}`"
+        :to="`/${id}`"
         class="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-center py-2 px-4 rounded transition-colors"
       >
         Ver Perfil

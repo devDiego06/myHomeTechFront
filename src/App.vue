@@ -11,6 +11,7 @@ const authSotre = useAuthStore();
 const router = useRouter();
 const route = useRoute();
 
+
 //redirection to home screnn when be logued
 authSotre.$subscribe(
   (_, state) => {

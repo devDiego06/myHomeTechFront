@@ -19,7 +19,7 @@ export const checkStatusAction = async (): Promise<CheckError | CheckSuccess> =>
       return { ok: false };
     }
 
-    const { data } = await techApi.get('/auth/login', {
+    const { data } = await techApi.get('/identity/me', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -57,8 +57,8 @@
 
     <nav class="space-x-6">
       <router-link class="text-[#443850] hover:text-[#6fd2cf] transition duration-300" to="/">Inicio</router-link>
-      <router-link class="text-[#443850] hover:text-[#6fd2cf] transition duration-300" to="search">Buscar Técnicos</router-link>
-      <router-link class="text-[#443850] hover:text-[#6fd2cf] transition duration-300" to="contact">Contacto</router-link>
+      <router-link class="text-[#443850] hover:text-[#6fd2cf] transition duration-300" to="/search">Buscar Técnicos</router-link>
+      <router-link class="text-[#443850] hover:text-[#6fd2cf] transition duration-300" to="/contact">Contacto</router-link>
     </nav>
     <div>
       <template v-if="!authStore.isAuthenticated">
@@ -68,15 +68,10 @@
       </template>
 
       <template v-else>
-        <button type="button" @click="authStore.logOut()" class="text-[#443850] hover:text-[#6fd2cf] mr-4">Cerrar Seccion</button>
+        <div class="flex items-center space-x-4">
+          <ButtonProfile  />
 
-      <button
-            @click="authStore.logOut()"
-            type="button"
-            class="rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg"
-          >
-            LogOut
-          </button>
+        </div>
       </template>
 
     </div>
@@ -88,6 +83,7 @@
 <script setup lang="ts">
 
 import { useAuthStore } from '@/modules/auth/store/authStore';
+import ButtonProfile from '@/modules/technician/components/ButtonProfile.vue';
 
 import { RouterLink } from 'vue-router';
 
@@ -98,3 +94,14 @@ const authStore = useAuthStore();
 
 </script>
 
+<style type="text/css">
+.st0 {
+  fill: #02284d;
+}
+.st1 {
+  fill: #ff7602;
+}
+.st2 {
+  fill: none;
+}
+</style>

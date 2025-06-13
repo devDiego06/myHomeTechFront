@@ -20,7 +20,7 @@ export const registerAction = async (
   role: string,
 ): Promise<RegisterError | RegisterSuccess> => {
   try {
-    const { data } = await techApi.post<AuthResponse>('/users/register', {
+    const { data } = await techApi.post<AuthResponse>('/identity/register', {
       name,
       email,
       password,
