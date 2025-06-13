@@ -74,6 +74,7 @@ import { ref } from 'vue'
 import TechnicianCard from '../components/TechnicianCard.vue'
 import SearchFilter from '../components/SearchFilter.vue'
 import { useAuthStore } from '@/modules/auth/store/authStore'
+import { getTechnician } from '@/modules/technician/actions';
 
 const authStore = useAuthStore();
 
@@ -140,6 +141,11 @@ const technicians = [
     verified: true,
   },
 ]
+
+const {data: technicians } = useQuery({
+  queryKey: ['technicians'],
+  queryFn: () => getTechnician()
+})
 
 const filteredTechnicians = ref([...technicians])
 const filters = ref({
